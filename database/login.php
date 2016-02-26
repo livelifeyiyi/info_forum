@@ -1,0 +1,369 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="./picture/title.png"/>
+   <title>
+    login
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./account/csshsy/bootstrap.min.css" rel="stylesheet">
+    <link href="./account/csshsy/font-awesome.css" rel="stylesheet">
+
+    <script src="./account/jshsy/jquery.min.js"></script>
+    <script src="./account/jshsy/bootstrap2.min.js"></script>
+
+    
+    
+
+        
+        <link rel="stylesheet" href="./account/csshsy/9ddfff193f12.css" type="text/css" />
+
+<!--        <script type="text/javascript" src="./account/jshsy/acea93bb4f1b.js"></script>
+-->
+    
+
+    
+       
+    
+
+    <script type="application/javascript">
+        
+            USER_ID = null;
+        
+        TITLE_SEARCH_URL = "/local/search/title/"
+        POST_DISPLAY_URL = "/p/"
+    </script>
+    
+
+        <script type="text/javascript">  
+
+
+$(document).ready(function(){
+
+  $("#signin").click(function(){
+
+  email=$("#id_login").val();
+  password=$("#id_password").val();
+          
+  var dataObject={
+    "email":$("#id_login").val(), 
+    "password":$("#id_password").val()
+    
+    };
+  /*$.ajax({ 
+  type:'GET', 
+  //url:"http://api.fanqiechaodan.info/users/",
+  url:"check_signup.php?data=" + encodeURI(JSON.stringify(dataObject)),
+  //data:JSON.stringify(dataObject),//jsonData(),//可以直接加一个函数名。 
+  contentType:"application/json;text/html;charset=utf-8",//dataType:'json', 
+  error:function(XMLHttpRequest, textStatus, errorThrown){  
+        alert(XMLHttpRequest.readyState + XMLHttpRequest.status + XMLHttpRequest.responseText);  
+    },
+  //beforeSend:beforecall, 
+  success:function(result){//callback
+        
+
+             alert("Register succeed！");
+             window.location.href="./main.php";
+  }
+  
+  })
+*/
+  var url = "check_login.php?data=" + JSON.stringify(dataObject) + "&time" + Math.random();
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState==4) {
+        var response = xhr.responseText;
+      if(response=="OK") {
+      alert("login succeed!");
+      window.location.href="./main.php";
+
+      } 
+      else {
+        alert("login failed!");
+        window.location.href="./login.php";
+        //window.location.href="./signup.php";
+      }
+
+    }
+  };
+  xhr.send(null);
+
+
+  
+  }); 
+});
+ 
+</script>
+
+</head>
+<body>
+
+<div class="container" id="content">
+
+    
+    
+    
+
+
+<div class="row visible-lg visible-md">
+    <div class="col-md-12 text-center" id="topnav">
+            
+                <div class="col-md-1 ">
+                    <a href="./Latest.php">Latest <sup><b></b></sup></a>
+                </div>
+            
+                <div class="col-md-1 ">
+                    <a href="./Open.php">Open <sup><b></b></sup></a>
+                </div>
+
+       
+    </div>
+</div>
+
+<div class="row visible-sm visible-xs">
+
+    <div class="col-xs-4">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                 Latest 
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                
+                    <li>
+                        <a href="./Latest.php">Latest</a>
+                    </li>
+                
+                    <li>
+                        <a href="./Open.php">Open</a>
+                    </li>
+                
+                    <li>
+                        <a href="./Most.php">MOST</a>
+                    </li>
+                
+                   
+            </ul>
+        </div>
+    </div>
+
+        <div class="col-xs-4 text-center" style="margin-bottom:5px">
+        <a role="button" class="btn btn-primary" href="./main.php">
+            <i class="fa fa-star fa-1x"></i> Home </a>
+        </a>
+
+    </div>
+
+    <div class="col-xs-4 ">
+        <div class="btn-group pull-right">
+
+            
+                <div>
+                    <a class="btn btn-primary active" role="button" href="./login.php">
+                        <i class="fa fa-user fa-1x"></i> Log In
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="row visible-lg visible-md">
+
+    <div class="col-md-12" id="navbar">
+
+        <div class="col-lg-3 visible-lg" id="logo">
+            <a href="./main_before.php"><img src="./picture/logo.png"></a>
+        </div>
+
+        <div class="col-md-3 visible-md text-center">
+            <a href="/">
+                <a href="/"><img style="width:200px; height: auto;" src="./picture/logo.png"></a>
+            </a>
+        </div>
+
+        
+
+            <div class="col-md-9 top text-center">
+                 Welcome to Toast Studio!
+                
+            </div>
+
+            <div class="col-md-2 col-md-offset-10 mid ">
+                
+                    <div><i class="fa fa-globe"></i>
+                    </div>
+                    <div></div>
+                
+            </div>
+
+            <div class="col-md-2 mid ">
+                <b><a href="./login.php">
+                    <div><img src="./picture/login1.jpg"></img></div>
+                    <div>User Login</div>
+                </a></b>
+            </div>
+
+            <div class="col-md-2 mid newpost">
+               
+                    <div><i class="fa fa-plus-circle fa-1x"></i></div>
+                    <div></div>
+               
+            </div>
+
+
+            <div class="login-or" style="margin-top:3em">
+                        <a role="button" class="btn btn-info" href="./signup.php">Sign up with an email!</a>
+                    </div>  
+        
+    </div>
+</div>
+
+
+    
+
+  
+    
+
+    
+    
+    <div class="row">
+
+   
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="text-center" style="margin:2em 0em 2em 0em;">
+                Do you have an email based account? Log in below:
+            </div>
+        </div>
+
+        <div class="col-md-6 col-md-offset-3">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Email Login</h3>
+                </div>
+                <div class="panel-body">
+
+<!--
+                    <form class="login" method="POST" action="/accounts/login/">  -->
+                        <input type='hidden' name='csrfmiddlewaretoken' value='bnSmHPY8hwn5oL4H23eerOZ5lgUS5paq' />
+
+                        
+
+<div id="div_id_login" class="form-group">
+    <label for="id_login" class="control-label  requiredField">
+				E-mail<span class="asteriskField">*</span></label>
+    <div class="controls ">
+    <input autofocus="autofocus" class="textinput textInput form-control" id="id_login" name="login" placeholder="E-mail address" type="text" /> 
+    </div>
+</div>
+<div id="div_id_password" class="form-group">
+    <label for="id_password" class="control-label  requiredField">
+				Password<span class="asteriskField">*</span></label>
+    <div class="controls ">
+    <input class="textinput textInput form-control" id="id_password" name="password" placeholder="Password" type="password" /> 
+    </div>
+</div>
+<!--<div class="form-group">
+    <div id="div_id_remember" class="checkbox">
+    
+    </div>
+</div>-->
+
+
+                        
+
+                        <button type="submit" class="btn btn-success" id="signin">Sign In &raquo;</button>
+
+                    <!--    <span class="btn btn-default pull-right">
+                            <a class="button" href="/accounts/password/reset/">Forgot Password? &raquo;</a>
+                   
+                        </span>
+                   
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row toc">
+
+            <div class="col-xs-3 col-xs-offset-1 col-md-3 col-md-offset-3">
+                <div class="title">Content</div>
+                <ul class="flat">
+                    <li><a href="./searchpage.php">Search</a></li>
+                    <li><a href="./userinfo.php">Users</a></li>
+                    <li><a href="./open.php">Open</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-md-3">
+                <div class="title">Help</div>
+                <ul class="flat">
+                    <li><a href="http://php.net/">PHP</a></li>
+                    <li><a href="http://www.mysql.com/">MySql</a></li>
+                    <li><a href="http://httpd.apache.org/">Apache</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                Established 2014.7 in <a href="http://www.tongji.edu.cn/" title="Welcome to tongji!">tju</a> by TOAST STUDIO.
+            </div>
+            <div class="col-md-12 text-center">
+                <br>
+            </div>
+        </div>
+    
+
+</div>
+
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-101522-12']);
+        _gaq.push(['_setDomainName', 'biostars.org']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</body>
+</html>

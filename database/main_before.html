@@ -1,0 +1,875 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+
+    <title>Latest Posts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.css" rel="stylesheet">
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    
+    
+
+        
+        <link rel="stylesheet" href="./css/9ddfff193f12.css" type="text/css" />
+
+ <!--       <script type="text/javascript" src="./js/acea93bb4f1b.js"></script>
+-->
+    
+
+    
+        
+    
+
+    <script type="application/javascript">
+        
+            USER_ID = null;
+        
+        TITLE_SEARCH_URL = "/local/search/title/"
+        POST_DISPLAY_URL = "/p/"
+    </script>
+</head>
+<body>
+
+
+
+<div class="container" id="content">
+
+
+<div class="row visible-lg visible-md">
+    <div class="col-md-12 text-center" id="topnav">
+            
+                <div class="col-md-1 active">
+                    <a href="./Latest.php">Latest <sup><b></b></sup></a>
+                </div>
+            
+                <div class="col-md-1 ">
+                    <a href="./Open.php">Open <sup><b></b></sup></a>
+                </div>
+
+                <div class="col-md-1 ">
+                    <a href="./Most.php">MOST <sup><b></b></sup></a>
+                </div>
+       
+    </div>
+</div>
+
+<div class="row visible-sm visible-xs">
+
+    <div class="col-xs-4">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                 Latest 
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                
+                    <li>
+                        <a href="./Latest.php">Latest</a>
+                    </li>
+                
+                    <li>
+                        <a href="./Open.php">Open</a>
+                    </li>
+                
+                    <li>
+                        <a href="./Most.php">MOST</a>
+                    </li>
+                
+                   
+            </ul>
+        </div>
+    </div>
+
+        <div class="col-xs-4 text-center" style="margin-bottom:5px">
+        <a role="button" class="btn btn-primary" href="./main.php">
+            <i class="fa fa-star fa-1x"></i> Home </a>
+        </a>
+
+    </div>
+
+    <div class="col-xs-4 ">
+        <div class="btn-group pull-right">
+
+            
+                <div>
+                    <a class="btn btn-primary active" role="button" href="./login.php">
+                        <i class="fa fa-user fa-1x"></i> Log In
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="row visible-lg visible-md">
+
+    <div class="col-md-12" id="navbar">
+
+        <div class="col-lg-3 visible-lg" id="logo">
+            <a href="./main.php"><img src="./picture/logo.png"></a>
+        </div>
+
+        <div class="col-md-3 visible-md text-center">
+            <a href="/">
+                <a href="/"><img style="width:200px; height: auto;" src="./picture/logo.png"></a>
+            </a>
+        </div>
+
+        
+
+            <div class="col-md-9 top text-center">
+                 Welcome to Biostar!
+                
+            </div>
+
+            <div class="col-md-2 col-md-offset-10 mid ">
+                
+                    <div><i class="fa fa-globe"></i>
+                    </div>
+                    <div></div>
+                
+            </div>
+
+            <div class="col-md-2 mid ">
+                <b><a href="./login.php">
+                    <div><img src="./picture/login1.jpg"></img></div>
+                    <div>User Login</div>
+                </a></b>
+            </div>
+
+            <div class="col-md-2 mid newpost">
+               
+                    <div><i class="fa fa-plus-circle fa-1x"></i></div>
+                    <div></div>
+               
+            </div>
+
+        
+    </div>
+</div>
+
+
+    
+
+    <div class="row">
+    <div class="col-md-10 col-md-offset-2 searchbar">
+        <div  class="col-md-8">
+            <input type="text" id="searchform" style="width:100%">
+        </div>
+
+        <div class="visible-lg visible-md">
+            or &nbsp;<a role="button" class="btn btn-default btn-xs" href="./searchpage.php"><img src="./picture/search.png">
+            Classic search</a>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+        <div class="col-md-9">
+
+            
+
+<div class="row pagebar">
+    <div class="col-sm-3">
+
+
+        <div class="btn-group visible-lg visible-md">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                Limit to: all time <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                
+                    <li><a href="?sort=update&limit=all time&q=">all time</a></li>
+                
+                    <li><a href="?sort=update&limit=today&q=">today</a></li>
+                
+                    <li><a href="?sort=update&limit=this week&q=">this week</a></li>
+                
+                    <li><a href="?sort=update&limit=this month&q=">this month</a></li>
+                
+                    <li><a href="?sort=update&limit=this year&q=">this year</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="cold-sm-12 col-md-6 text-center ">
+
+        <span class="step-links">
+        
+            &lt;prev
+        
+
+            <span class="current">
+              &bull; 17,215 results &bull;
+                page 1 of 431 &bull;
+        </span>
+
+            
+                <a href="?page=2&sort=update&limit=all time&q=">next &gt;</a>
+            
+        </span>
+    </div>
+
+    <div class="col-sm-3 visible-lg visible-md">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                Sort by: update <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                
+                    <li><a href="?sort=update&limit=all time&q=">update</a></li>
+                
+                    <li><a href="?sort=views&limit=all time&q=">views</a></li>
+                
+                    <li><a href="?sort=followers&limit=all time&q=">followers</a></li>
+                
+                    <li><a href="?sort=answers&limit=all time&q=">answers</a></li>
+                
+                    <li><a href="?sort=bookmarks&limit=all time&q=">bookmarks</a></li>
+                
+                    <li><a href="?sort=votes&limit=all time&q=">votes</a></li>
+                
+                    <li><a href="?sort=rank&limit=all time&q=">rank</a></li>
+                
+                    <li><a href="?sort=creation&limit=all time&q=">creation</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+            <div id="post-list">
+                
+                    
+
+
+<div class="post-row Question Open">
+
+    <div class="count-box visible-lg visible-md">
+
+        <div class="box vote">
+            <div class="c">0</div>
+            <div class="t">votes</div>
+        </div>
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+        <div class="box view">
+            <div class="c">1</div>
+            <div class="t">views</div>
+        </div>
+
+        
+
+    </div>
+
+    
+    <div class="count-box-sm visible-sm visible-xs">
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+    </div>
+
+    <div class="title-box clearfix">
+        <div class="post-title">
+            
+            <a href="/p/105736/">How to visualize a decision tree?</a>
+        </div>
+
+        
+
+        <div class="clearfix">
+
+            <span class="tags tag-pad visible-lg visible-md">
+            
+                <a class="tag" href="/t/bioinformatics/">bioinformatics</a>
+            
+                <a class="tag" href="/t/datamining/">datamining</a>
+            
+            </span>
+            <span class="userlink text-right muted">
+            written 2 minutes ago by 
+
+
+<a href="/u/2724/">Paul</a> &bull; <b>0</b>
+                
+            </span>
+
+        </div>
+
+    </div>
+</div>
+
+                
+                    
+                    
+
+
+<div class="post-row Job Open">
+
+    <div class="count-box visible-lg visible-md">
+
+        <div class="box vote">
+            <div class="c">0</div>
+            <div class="t">votes</div>
+        </div>
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+        <div class="box view">
+            <div class="c">18</div>
+            <div class="t">views</div>
+        </div>
+
+        
+
+    </div>
+
+    
+    <div class="count-box-sm visible-sm visible-xs">
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+    </div>
+
+    <div class="title-box clearfix">
+        <div class="post-title">
+            
+                Job:
+            
+            <a href="/p/105723/">PhD Scholarship in Bioinformatics to study Ankylosing Spondylitis</a>
+        </div>
+
+        
+
+        <div class="clearfix">
+
+            <span class="tags tag-pad visible-lg visible-md">
+            
+                <a class="tag" href="/t/bioinformatics/">bioinformatics</a>
+            
+                <a class="tag" href="/t/phd/">phd</a>
+            
+                <a class="tag" href="/t/job/">job</a>
+            
+                <a class="tag" href="/t/scholarship/">scholarship</a>
+            
+            </span>
+            <span class="userlink text-right muted">
+            written 4 hours ago by 
+
+
+<a href="/u/8732/">Elena</a> &bull; <b>90</b>
+                
+            </span>
+
+        </div>
+
+    </div>
+</div>
+
+                
+                    
+
+             
+                    
+
+
+<div class="post-row Question Open">
+
+    <div class="count-box visible-lg visible-md">
+
+        <div class="box vote">
+            <div class="c">0</div>
+            <div class="t">votes</div>
+        </div>
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+        <div class="box view">
+            <div class="c">37</div>
+            <div class="t">views</div>
+        </div>
+
+        
+
+    </div>
+
+    
+    <div class="count-box-sm visible-sm visible-xs">
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+    </div>
+
+    <div class="title-box clearfix">
+        <div class="post-title">
+            
+            <a href="/p/105717/">Formatdb problem in Unus package</a>
+        </div>
+
+        
+
+        <div class="clearfix">
+
+            <span class="tags tag-pad visible-lg visible-md">
+            
+                <a class="tag" href="/t/blast/">blast</a>
+            
+            </span>
+            <span class="userlink text-right muted">
+            written 7 hours ago by 
+
+
+<a href="/u/11530/">kamynz16</a> &bull; <b>0</b>
+                
+            </span>
+
+        </div>
+
+    </div>
+</div>
+
+                
+                    
+    
+                    
+
+
+<div class="post-row News Open">
+
+    <div class="count-box visible-lg visible-md">
+
+        <div class="box vote">
+            <div class="c">14</div>
+            <div class="t">votes</div>
+        </div>
+        <div class="box answered">
+            <div class="c">5</div>
+            <div class="t">answers</div>
+        </div>
+        <div class="box view">
+            <div class="c">1.5k</div>
+            <div class="t">views</div>
+        </div>
+
+        
+
+    </div>
+
+    
+    <div class="count-box-sm visible-sm visible-xs">
+        <div class="box answered">
+            <div class="c">5</div>
+            <div class="t">answers</div>
+        </div>
+    </div>
+
+    <div class="title-box clearfix">
+        <div class="post-title">
+            
+                News:
+            
+            <a href="/p/96718/">Bioinformatics Hands-On NGS Data Analysis Workshops 2014</a>
+        </div>
+
+        
+
+        <div class="clearfix">
+
+            <span class="tags tag-pad visible-lg visible-md">
+            
+                <a class="tag" href="/t/news/">news</a>
+            
+                <a class="tag" href="/t/methylation/">methylation</a>
+            
+                <a class="tag" href="/t/rna-seq/">rna-seq</a>
+            
+            </span>
+            <span class="userlink text-right muted">
+            written 3 months ago by 
+
+
+<a href="/u/3827/">David Langenberger</a> &bull; <b>2.7k</b>
+                
+            </span>
+
+        </div>
+
+    </div>
+</div>
+
+                
+                    
+
+
+
+
+<div class="post-row Tool Open">
+
+    <div class="count-box visible-lg visible-md">
+
+        <div class="box vote">
+            <div class="c">1</div>
+            <div class="t">vote</div>
+        </div>
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+        <div class="box view">
+            <div class="c">41</div>
+            <div class="t">views</div>
+        </div>
+
+        
+
+    </div>
+
+    
+    <div class="count-box-sm visible-sm visible-xs">
+        <div class="box unanswered">
+            <div class="c">0</div>
+            <div class="t">answers</div>
+        </div>
+    </div>
+
+    <div class="title-box clearfix">
+        <div class="post-title">
+            
+                Tool:
+            
+            <a href="/p/105663/">Automatically download NCBI Blast databases</a>
+        </div>
+
+        
+
+        <div class="clearfix">
+
+            <span class="tags tag-pad visible-lg visible-md">
+            
+                <a class="tag" href="/t/ncbi/">ncbi</a>
+            
+                <a class="tag" href="/t/database/">database</a>
+            
+                <a class="tag" href="/t/tool/">tool</a>
+            
+                <a class="tag" href="/t/blast/">blast</a>
+            
+                <a class="tag" href="/t/download/">download</a>
+            
+            </span>
+            <span class="userlink text-right muted">
+            written 18 hours ago by 
+
+
+<a href="/u/11023/">BioApps</a> &bull; <b>180</b>
+                
+            </span>
+
+        </div>
+
+    </div>
+</div>
+
+                
+            
+            
+
+<div class="row pagebar">
+    <div class="col-sm-3">
+
+
+        <div class="btn-group visible-lg visible-md">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                Limit to: all time <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                
+                    <li><a href="?sort=update&limit=all time&q=">all time</a></li>
+                
+                    <li><a href="?sort=update&limit=today&q=">today</a></li>
+                
+                    <li><a href="?sort=update&limit=this week&q=">this week</a></li>
+                
+                    <li><a href="?sort=update&limit=this month&q=">this month</a></li>
+                
+                    <li><a href="?sort=update&limit=this year&q=">this year</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="cold-sm-12 col-md-6 text-center ">
+
+        <span class="step-links">
+        
+            &lt;prev
+        
+
+            <span class="current">
+              &bull; 17,215 results &bull;
+                page 1 of 431 &bull;
+        </span>
+
+            
+                <a href="?page=2&sort=update&limit=all time&q=">next &gt;</a>
+            
+        </span>
+    </div>
+
+    <div class="col-sm-3 visible-lg visible-md">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                Sort by: update <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                
+                    <li><a href="?sort=update&limit=all time&q=">update</a></li>
+                
+                    <li><a href="?sort=views&limit=all time&q=">views</a></li>
+                
+                    <li><a href="?sort=followers&limit=all time&q=">followers</a></li>
+                
+                    <li><a href="?sort=answers&limit=all time&q=">answers</a></li>
+                
+                    <li><a href="?sort=bookmarks&limit=all time&q=">bookmarks</a></li>
+                
+                    <li><a href="?sort=votes&limit=all time&q=">votes</a></li>
+                
+                    <li><a href="?sort=rank&limit=all time&q=">rank</a></li>
+                
+                    <li><a href="?sort=creation&limit=all time&q=">creation</a></li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+        </div>
+</div>
+
+<div class="col-md-3 sidebar">
+
+
+<div class="head">Recent Votes</div>
+<div class="recent-votes">
+    <ul style="opacity: 0.8;">
+        
+            <li><a href="/p/105694/#105724">
+                A: how many number of elements have a value greater than x and less than y</a>
+            </li>
+        
+            <li><a href="/p/104050/#104074">
+                C: Every one of my illumina seqs have an &#39;N&#39; at base 18 and 48, and -14 on the reve</a>
+            </li>
+        
+            <li><a href="/p/60478/#60518">
+                A: Is Tophat The Only Mapper To Consider For Rna-Seq Data?</a>
+            </li>
+        
+            <li><a href="/p/60478/#60518">
+                A: Is Tophat The Only Mapper To Consider For Rna-Seq Data?</a>
+            </li>
+        
+            <li><a href="/p/60478/">
+                Is Tophat The Only Mapper To Consider For Rna-Seq Data?</a>
+            </li>
+        
+            <li><a href="/p/83572/">
+                Dgidb - Mining The Druggable Genome</a>
+            </li>
+        
+            <li><a href="/p/105591/">
+                Postdoctoral Trainee in Bioinformatics supporting the Integrative Genome Browser, University of North Carolina, USA</a>
+            </li>
+        
+    </ul>
+</div>
+
+
+            
+
+
+
+
+
+    <div class="head">Recent Awards &bull; <a href="/b/list/">All &raquo;</a></div>
+    <div class="recent-awards">
+        <ul>
+            
+                <li>
+                    <a href="/b/22/">Appreciated <i class="fa fa-heart"></i></a>
+                      to 
+
+
+<a href="/u/30/">Pierre Lindenbaum</a> &diams; <b>60k</b>
+                </li>
+            
+                <li>
+                    <a href="/b/5/">Supporter <i class="fa fa-thumbs-up"></i></a>
+                      to 
+
+
+<a href="/u/10782/">Katie D&#39;Aco</a> &bull; <b>400</b>
+                </li>
+            
+                <li>
+                    <a href="/b/8/">Centurion <i class="fa fa-bolt"></i></a>
+                      to 
+
+
+<a href="/u/528/">Daler</a> &diams; <b>2.4k</b>
+                </li>
+            
+                <li>
+                    <a href="/b/3/">Teacher <i class="fa fa-smile-o"></i></a>
+                      to 
+
+
+<a href="/u/7403/">Devon Ryan</a> &diams; <b>14k</b>
+                </li>
+            
+                <li>
+                    <a href="/b/12/">Popular Question <i class="fa fa-eye"></i></a>
+                      to 
+
+
+<a href="/u/73/">Jeremy Leipzig</a> &diams; <b>13k</b>
+                </li>
+            
+                <li>
+                    <a href="/b/3/">Teacher <i class="fa fa-smile-o"></i></a>
+                      to 
+
+
+<a href="/u/73/">Jeremy Leipzig</a> &diams; <b>13k</b>
+                </li>
+            
+        </ul>
+    </div>
+
+
+        </div>
+    
+
+</div>
+
+
+    
+    
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row toc">
+
+            <div class="col-xs-3 col-xs-offset-1 col-md-2 col-md-offset-3">
+                <div class="title">Content</div>
+                <ul class="flat">
+                    <li><a href="/local/search/page/">Search</a></li>
+                    <li><a href="/user/list/">Users</a></li>
+                    <li><a href="/t/">Tags</a></li>
+                    <li><a href="/b/list/">Badges</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-md-2">
+                <div class="title">Help</div>
+                <ul class="flat">
+                    <li><a href="/info/about/">About</a></li>
+                    <li><a href="/info/faq/">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-3 col-md-2 ">
+                <div class="title">Access</div>
+                <ul class="flat">
+                    <li><a href="/info/rss/">RSS</a></li>
+                    <li>Stats</li>
+                    <li>API</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                Use of this site constitutes acceptance of our <a href="/info/policy/">User
+                Agreement
+                and Privacy
+                Policy</a>.
+            </div>
+            <div class="col-md-12 text-center">
+                Powered by <a href="https://github.com/ialbert/biostar-central">Biostar</a>
+                version 2.1.0
+            </div>
+        </div>
+    
+
+    
+    <div id="traffic">Traffic: 533 users visited in the last hour</div>
+
+<!--</div>-->
+
+
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-101522-12']);
+        _gaq.push(['_setDomainName', 'biostars.org']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+</body>
+</html>
